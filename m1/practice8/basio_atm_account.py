@@ -16,7 +16,6 @@ class Account:
         else:
             return False
 
-
 account = Account("Yma Basio", 10000.00)
 account.check_balance()
 account.deposit(1000)
