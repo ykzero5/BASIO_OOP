@@ -1,4 +1,5 @@
 from basio_atm_account import Account
+import basio_atm_balance
 
 account = Account("Juan Dela Cruz", 10000)
 
@@ -8,7 +9,7 @@ print(f"  Welcome, {account.account_name}!")
 print("==============================")
  
 print()
-print("===== ATM MENU by LASTNAME =====")
+print("===== ATM MENU by BASIO =====")
 print("1. Check Balance")
 print("2. Deposit")
 print("3. View History")
@@ -17,7 +18,7 @@ print("4. Analyze Transactions")
 choice = input("Choose option: ")
 
 if choice == "1":
-    account.check_balance()
+    basio_atm_balance.check_balance(account)
 
 else:
     print(f"Invalid option.")
