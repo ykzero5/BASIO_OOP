@@ -1,6 +1,7 @@
 from basio_atm_account import Account
 import basio_atm_balance
 import basio_atm_deposit
+import basio_atm_history
 
 account = Account("Juan Dela Cruz", 10000)
 
@@ -23,6 +24,9 @@ if choice == "1":
 
 elif choice == "2":
     basio_atm_deposit.deposit_money(account)
+
+elif choice == "3":
+    basio_atm_history.view_history()
 
 else:
     print(f"Invalid option.")
