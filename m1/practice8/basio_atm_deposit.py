@@ -15,8 +15,8 @@ def deposit_money(account):
                 print(f"New Balance: ₱{account._balance:.2f}")
                 account.check_balance()
 
-            else:
-                print("Invalid deposit amount.")
+        else:
+            print("Invalid deposit amount.")
 
     except ValueError:
         print("Invalid input. Please enter a valid number.")
