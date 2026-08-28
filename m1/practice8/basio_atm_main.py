@@ -1,5 +1,6 @@
 from basio_atm_account import Account
 import basio_atm_balance
+import basio_atm_deposit
 
 account = Account("Juan Dela Cruz", 10000)
 
@@ -19,6 +20,9 @@ choice = input("Choose option: ")
 
 if choice == "1":
     basio_atm_balance.check_balance(account)
+
+elif choice == "2":
+    basio_atm_deposit.deposit_money(account)
 
 else:
     print(f"Invalid option.")
