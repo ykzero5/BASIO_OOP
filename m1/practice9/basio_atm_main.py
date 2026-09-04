@@ -300,4 +300,4 @@ elif choice == "Analyze Transactions":
 # [ ] No AI Assistance – Completed independently without AI.
 # [ ] AI as Support Tool – Used AI for explanations, syntax, or minor corrections.
 # [X] AI as Collaborative Partner – Used AI to design, structure, or co-create significant code.
-# """``
+# """
