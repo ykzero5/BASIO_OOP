@@ -201,17 +201,25 @@ elif choice == "View History":
         elif line.startswith("Amount:"):
 
             current_transaction["Amount"] = (
-                line.replace(
-                    "Amount: ₱",
-                    ""
-                ).strip()
-            )
+        line.replace(
+            "Amount: ₱",
+            ""
+        ).strip()
+    )
 
-            transactions.append(
-                current_transaction
-            )
+    if (
+        "Timestamp" in current_transaction
+        and "Account" in current_transaction
+        and "Transaction" in current_transaction
+        and "Amount" in current_transaction
+    ):
+        transactions.append(
+            current_transaction.copy()
+        )
 
-            current_transaction = {}
+    current_transaction = {}
+
+    current_transaction = {}
 
 
     if transactions:
