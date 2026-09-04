@@ -152,7 +152,6 @@ elif choice == "Withdraw":
                     f"₱{account.check_balance():,.2f}"
                 )
 
-
 elif choice == "View History":
 
     st.header("Transaction History")
