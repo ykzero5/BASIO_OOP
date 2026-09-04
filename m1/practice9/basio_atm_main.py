@@ -60,19 +60,6 @@ if choice == "Check Balance":
         f"₱{balance:,.2f}"
     )
 
-if choice == "Check Balance":
-
-    st.header("Check Balance")
-
-    balance = (
-        basio_atm_balance.check_balance(account)
-    )
-
-    st.metric(
-        "Current Balance",
-        f"₱{balance:,.2f}"
-    )
-
 
 elif choice == "Deposit":
 
