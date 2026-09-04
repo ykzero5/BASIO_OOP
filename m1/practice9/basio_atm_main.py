@@ -112,7 +112,7 @@ elif choice == "Withdraw":
     )
 
     amount = st.number_input(
-        "Enter withdrawal amount",
+        "Enter withdrawal amount:",
         min_value=0.0,
         step=100.0,
         format="%.2f"
