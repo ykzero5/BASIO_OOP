@@ -17,7 +17,8 @@ def analyze_transactions():
             "latest_transaction": "None",
             "latest_timestamp": "None",
             "largest_transaction": 0
-        }        
+        }
+
     transactions = []
 
     current = {}
@@ -42,14 +43,15 @@ def analyze_transactions():
             )
 
         elif line.startswith("Transaction:"):
+
             current["type"] = (
-                line.replace("Transactions:", "").strip()
+                line.replace("Transaction:", "").strip()
             )
 
-        elif lines.startswith("Amount:"):
+        elif line.startswith("Amount:"):
 
             amount_text = (
-                lines.replace("Amount: ₱", "")
+                line.replace("Amount: ₱", "")
                 .replace(",", "")
                 .strip()
             )
@@ -66,18 +68,15 @@ def analyze_transactions():
 
             current = {}
 
-# Analysis 1: Transaction Summary
+
     total_transactions = len(transactions)
 
     deposits = 0
     withdrawals = 0
 
-#Analysis 2: Transaction Amount Analysis
     total_deposited = 0
     total_withdrawn = 0
     largest_transaction = 0
-
-#Analysis 3: Account Activity Analysis
 
     latest_transaction = "None"
     latest_timestamp = "None"
@@ -88,32 +87,26 @@ def analyze_transactions():
         transaction_type = transaction["type"]
         amount = transaction["amount"]
 
-        #count deposits
         if transaction_type == "Deposit":
 
             deposits += 1
             total_deposited += amount
 
-        #count withdrawals
         elif transaction_type == "Withdraw":
 
             withdrawals += 1
             total_withdrawn += amount
 
-        #find largest transaction
         if amount > largest_transaction:
 
             largest_transaction = amount
 
-        #get latest transaction
         latest_transaction = transaction_type
 
-        #timestamp may not exist in old records
         if "timestamp" in transaction:
 
             latest_timestamp = transaction["timestamp"]
 
-    # calculate average transaction amount
 
     if total_transactions > 0:
 

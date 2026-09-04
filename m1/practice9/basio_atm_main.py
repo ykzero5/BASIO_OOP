@@ -8,10 +8,13 @@ import basio_atm_history
 import basio_atm_analysis
 
 
-account = Account(
-    "Juan Dela Cruz",
-    10000.00
-)
+if "account" not in st.session_state:
+    st.session_state.account = Account(
+        "Juan Dela Cruz",
+        10000.00
+    )
+
+account = st.session_state.account
 
 
 
