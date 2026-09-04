@@ -306,3 +306,19 @@ elif choice == "Analyze Transactions":
         "Latest Activity",
         result["latest_timestamp"]
     )
+
+""" 
+######### Learning Signature ######### 
+Programmed by: Yma Khaliya L. Basio
+Date Submitted: September 4, 2026
+ 
+Program Description: This program creates a Streamlit web-based ATM interface that connects the Account object with the balance, deposit, withdrawal,
+history, and analysis modules.
+Reflection: I learned how to connect different Python modules in one Streamlit application and use interface components to perform ATM operations
+and display results.
+ 
+AI Usage
+[ ] No AI Assistance – Completed independently without AI.
+[ ] AI as Support Tool – Used AI for explanations, syntax, or minor corrections.
+[X] AI as Collaborative Partner – Used AI to design, structure, or co-create significant code.
+"""
