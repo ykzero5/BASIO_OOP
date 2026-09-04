@@ -156,12 +156,9 @@ elif choice == "View History":
 
     st.header("Transaction History")
 
-    lines = (
-        basio_atm_history.view_history()
-    )
+    lines = basio_atm_history.view_history()
 
     transactions = []
-
     current_transaction = {}
 
     for line in lines:
@@ -172,55 +169,30 @@ elif choice == "View History":
             continue
 
         if line.startswith("Timestamp:"):
-
             current_transaction["Timestamp"] = (
-                line.replace(
-                    "Timestamp:",
-                    ""
-                ).strip()
+                line.replace("Timestamp:", "").strip()
             )
 
         elif line.startswith("Account:"):
-
             current_transaction["Account"] = (
-                line.replace(
-                    "Account:",
-                    ""
-                ).strip()
+                line.replace("Account:", "").strip()
             )
 
         elif line.startswith("Transaction:"):
-
             current_transaction["Transaction"] = (
-                line.replace(
-                    "Transaction:",
-                    ""
-                ).strip()
+                line.replace("Transaction:", "").strip()
             )
 
         elif line.startswith("Amount:"):
-
             current_transaction["Amount"] = (
-        line.replace(
-            "Amount: ₱",
-            ""
-        ).strip()
-    )
+                line.replace("Amount: ₱", "").strip()
+            )
 
-    if (
-        "Timestamp" in current_transaction
-        and "Account" in current_transaction
-        and "Transaction" in current_transaction
-        and "Amount" in current_transaction
-    ):
-        transactions.append(
-            current_transaction.copy()
-        )
+            transactions.append(
+                current_transaction.copy()
+            )
 
-    current_transaction = {}
-
-    current_transaction = {}
-
+            current_transaction = {}
 
     if transactions:
 
@@ -235,7 +207,6 @@ elif choice == "View History":
         st.info(
             "No transactions available."
         )
-
 
 elif choice == "Analyze Transactions":
 
